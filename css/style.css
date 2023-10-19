@@ -1,5 +1,12 @@
 /* Global */
 :root {
+  /* App Colors */
+  --color-primary: var(--color-black);
+  --color-primary-variant: var(--color-gray);
+  --color-accent: var(--color-blue);
+  --color-accent-variant: var(--color-orange);
+  --color-text: var(--color-white);
+  /* Colors */
   --color-white: #ffffff;
   --color-black: #050a13;
   --color-blue: #03e8f9;
@@ -25,7 +32,7 @@ ul {
 }
 a {
   text-decoration: none;
-  color: var(--color-black);
+  color: var(--color-text);
 }
 button {
   background-color: transparent;
@@ -33,5 +40,5 @@ button {
   border: 0;
 }
 button:focus {
-  outline: 1px solid var(--color-blue);
+  outline: 1px solid var(--color-accent);
 }
