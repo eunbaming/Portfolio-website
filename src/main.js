@@ -30,3 +30,16 @@ document.addEventListener("scroll", () => {
     arrowUp.style.opacity = 0;
   }
 });
+
+// Navbar toggle 버튼 클릭 처리
+const navbarMenu = document.querySelector(".header__menu");
+const navbarToggle = document.querySelector(".header__toggle");
+
+navbarToggle.addEventListener("click", () => {
+  navbarMenu.classList.toggle("open");
+});
+
+// Navbar 메뉴 클릭 시 메뉴 닫힘 처리
+navbarMenu.addEventListener("click", () => {
+  navbarMenu.classList.remove("open");
+});
