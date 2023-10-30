@@ -15,8 +15,18 @@ document.addEventListener("scroll", () => {
 // Home 섹션을 아래로 스크롤 시 투명하게 처리
 const home = document.querySelector(".home__container");
 const homeHeight = home.offsetHeight;
-console.log("homeHeight", homeHeight);
 
 document.addEventListener("scroll", () => {
   home.style.opacity = 1 - window.scrollY / homeHeight;
+});
+
+// Arrow up 버튼을 아래로 스크롤 시 투명하게 처리
+const arrowUp = document.querySelector(".arrow-up");
+
+document.addEventListener("scroll", () => {
+  if (homeHeight / 2 < window.scrollY) {
+    arrowUp.style.opacity = 1;
+  } else {
+    arrowUp.style.opacity = 0;
+  }
 });
