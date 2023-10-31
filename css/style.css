@@ -239,7 +239,7 @@ button:focus {
   border-radius: 50%;
   background-color: var(--color-accent-variant);
   color: var(--color-text);
-  transition: all 250ms ease-in;
+  transition: all 150ms ease-in-out;
   opacity: 0;
 }
 .category--selected .category__count,
@@ -252,6 +252,11 @@ button:focus {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 1.5rem;
+  transition: all 200ms ease-out;
+}
+.projects.anim-out {
+  opacity: 0;
+  transform: scale(0.96) translateY(20px);
 }
 .project {
   border-radius: 8px;
