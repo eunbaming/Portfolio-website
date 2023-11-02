@@ -23,7 +23,6 @@ function handleActiveSelection(target) {
 
 // 프로젝트 필터링
 function filterProjects(filter) {
-  projectsContainer.classList.add("anim-out");
   projects.forEach((project) => {
     if (filter === "all" || filter === project.dataset.type) {
       project.style.display = "block";
@@ -31,6 +30,7 @@ function filterProjects(filter) {
       project.style.display = "none";
     }
   });
+  projectsContainer.classList.add("anim-out");
   setTimeout(() => {
     projectsContainer.classList.remove("anim-out");
   }, 200);
