@@ -13,9 +13,10 @@ const navItems = sectionIds.map((id) =>
 
 // 현재 섹션이 보여지고 있는지의 여부를 담고 있는 배열
 const visibleSections = sectionIds.map(() => false);
+let activeNavItem = navItems[0];
 
 const options = {
-  rootMargin: "-20% 0px 0px 0px",
+  rootMargin: "-30% 0px 0px 0px",
   threshold: [0, 0.9],
 };
 const observer = new IntersectionObserver(observerCallback, options);
@@ -30,19 +31,25 @@ function observerCallback(entries) {
       index === sectionIds.length - 1 &&
       entry.isIntersecting &&
       entry.intersectionRatio >= 0.9;
-    console.log("intersectionRatio", entry.intersectionRatio);
   });
-
-  console.log("visibleSections", visibleSections);
-  console.log("selectLastOne", selectLastOne);
 
   const navIndex = selectLastOne
     ? sectionIds.length - 1
     : findFirstIntersecting(visibleSections);
   console.log(sectionIds[navIndex]);
+
+  selectNavItem(navIndex);
 }
 
 function findFirstIntersecting(visibleSections) {
   const index = visibleSections.indexOf(true);
   return index >= 0 ? index : 0;
+}
+
+function selectNavItem(navIndex) {
+  const navItem = navItems[navIndex];
+  if (!navItem) return;
+  activeNavItem.classList.remove("active");
+  activeNavItem = navItem;
+  activeNavItem.classList.add("active");
 }
