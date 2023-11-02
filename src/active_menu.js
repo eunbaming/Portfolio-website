@@ -14,7 +14,10 @@ const navItems = sectionIds.map((id) =>
 // 현재 섹션이 보여지고 있는지의 여부를 담고 있는 배열
 const visibleSections = sectionIds.map(() => false);
 
-const options = {};
+const options = {
+  rootMargin: "-20% 0px 0px 0px",
+  threshold: [0, 0.9],
+};
 const observer = new IntersectionObserver(observerCallback, options);
 sections.forEach((section) => observer.observe(section));
 
@@ -26,7 +29,7 @@ function observerCallback(entries) {
     selectLastOne =
       index === sectionIds.length - 1 &&
       entry.isIntersecting &&
-      entry.intersectionRatio >= 0.99;
+      entry.intersectionRatio >= 0.9;
     console.log("intersectionRatio", entry.intersectionRatio);
   });
 
