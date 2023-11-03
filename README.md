@@ -69,7 +69,7 @@ HTML, CSS, VanilaJS로 제작한 포트폴리오 웹사이트 입니다.
 
 <br/>
 
-+ <Home> 섹션을 넘어갈 때에 점점 투명하게 처리되도록 개발
++ Home 섹션을 넘어갈 때에 점점 투명하게 처리되도록 개발
 
 ![Portfolio-website](https://github.com/eunbaming/Portfolio-website/assets/110072947/8fb230d4-f68f-4929-ac4d-823f1e984059)
 ```javascript
