@@ -69,6 +69,19 @@ HTML, CSS, VanilaJS로 제작한 포트폴리오 웹사이트 입니다.
 
 <br/>
 
++ <Home> 섹션을 넘어갈 때에 점점 투명하게 처리되도록 개발
+
+![Portfolio-website](https://github.com/eunbaming/Portfolio-website/assets/110072947/8fb230d4-f68f-4929-ac4d-823f1e984059)
+```javascript
+// Home 섹션을 아래로 스크롤 시 투명하게 처리
+const home = document.querySelector(".home__container");
+const homeHeight = home.offsetHeight;
+
+document.addEventListener("scroll", () => {
+  home.style.opacity = 1 - window.scrollY / homeHeight;
+});
+```
+
 + Intersection Observer를 사용하여 스크롤 시 해당 섹션의 아이템을 활성화시키도록 개발
 
 ```javascript
@@ -96,6 +109,7 @@ function observerCallback(entries) {
 <br/>
 
 + 오른쪽 하단에 화살표 아이콘을 두어 맨 윗부분에선 보이지 않다가 header 부분을 지나는 순간 생기도록 하여 아이콘 클릭 시 맨 위로 올라갈 수 있도록 개발
+
 ![Portfolio-website](https://github.com/eunbaming/Portfolio-website/assets/110072947/d12305a4-bf7d-451a-9d3c-f3fc91c89b2c)
 ![Portfolio-website](https://github.com/eunbaming/Portfolio-website/assets/110072947/20ee6b6f-1fda-4804-aff8-c263103eafa9)
 ```javascript
