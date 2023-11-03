@@ -176,18 +176,27 @@ button:focus {
   color: var(--color-accent);
   margin: 1rem 0;
   font-size: 1.2rem;
-  background-color: var(--color-primary);
 }
 .skills__coding {
   padding: 1rem;
   background-color: var(--color-primary);
 }
-.skills__etc {
+/* .skills__etc {
   padding: 1rem;
   background-color: var(--color-primary);
-  filter: brightness(150%);
-}
+  backdrop-filter: brightness(150%);
+} */
+.skills__etc {
+  --color-primary: rgb(5, 10, 19);
+  --brightness-factor: 150%;
 
+  padding: 1rem;
+  background-color: rgba(var(--color-primary), 0.5);
+  backdrop-filter: brightness(150%);
+}
+.skills__etc__li {
+  padding: 10px;
+}
 .bar {
   display: flex;
   flex-direction: column;
