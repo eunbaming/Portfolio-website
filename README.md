@@ -82,6 +82,8 @@ document.addEventListener("scroll", () => {
 });
 ```
 
+<br/>
+
 + Intersection Observer를 사용하여 스크롤 시 해당 섹션의 아이템을 활성화시키도록 개발
 
 ```javascript
